@@ -8,14 +8,14 @@ declare type SearchParamProps = {
 // ========================================
 
 declare type SignUpParams = {
-  firstName: string;
-  lastName: string;
-  address1: string;
-  city: string;
-  state: string;
-  postalCode: string;
-  dateOfBirth: string;
-  ssn: string;
+  firstName?: string;
+  lastName?: string;
+  address1?: string;
+  city?: string;
+  state?: string;
+  postalCode?: string;
+  dateOfBirth?: string;
+  ssn?: string;
   email: string;
   password: string;
 };
@@ -33,6 +33,7 @@ declare type User = {
   dwollaCustomerId: string;
   firstName: string;
   lastName: string;
+  name: string;
   address1: string;
   city: string;
   state: string;
@@ -91,14 +92,9 @@ declare type Bank = {
   sharableId: string;
 };
 
-declare type AccountTypes =
-  | "depository"
-  | "credit"
-  | "loan "
-  | "investment"
-  | "other";
+declare type AccountTypes = 'depository' | 'credit' | 'loan ' | 'investment' | 'other';
 
-declare type Category = "Food and Drink" | "Travel" | "Transfer";
+declare type Category = 'Food and Drink' | 'Travel' | 'Transfer';
 
 declare type CategoryCount = {
   name: string;
@@ -145,11 +141,11 @@ declare interface CreditCardProps {
 declare interface BankInfoProps {
   account: Account;
   appwriteItemId?: string;
-  type: "full" | "card";
+  type: 'full' | 'card';
 }
 
 declare interface HeaderBoxProps {
-  type?: "title" | "greeting";
+  type?: 'title' | 'greeting';
   title: string;
   subtext: string;
   user?: string;
@@ -174,7 +170,7 @@ declare interface PaginationProps {
 
 declare interface PlaidLinkProps {
   user: User;
-  variant?: "primary" | "ghost";
+  variant?: 'primary' | 'ghost';
   dwollaCustomerId?: string;
 }
 
@@ -188,7 +184,7 @@ declare interface PlaidLinkProps {
 // };
 
 declare interface AuthFormProps {
-  type: "sign-in" | "sign-up";
+  type: 'sign-in' | 'sign-up';
 }
 
 declare interface BankDropdownProps {
@@ -210,6 +206,7 @@ declare interface TotlaBalanceBoxProps {
 
 declare interface FooterProps {
   user: User;
+  type?: 'mobile' | 'desktop';
 }
 
 declare interface RightSidebarProps {
